@@ -8,8 +8,8 @@
  */
 
 /////////////////////////////////////////////////////////////////////////////
-// getThirdCommPosition accepts a string and returns the index of the third comma in that string /  no comma return -1
-function getThirdCommPosition(str,searcVal) {
+// getThirdCommaPosition accepts a string and returns the index of the third comma in that string /  no comma return -1
+function getThirdCommaPosition(str,searcVal) {
 
 	var i, position = -1;
 
@@ -26,5 +26,5 @@ function getThirdCommPosition(str,searcVal) {
 //var str = ',,,';// === 2
 var str = 'hel,lowo,rld';// === -1
 
-console.log(getThirdCommPosition(str, ','));
+console.log(getThirdCommaPosition(str, ','));
 ////////////////////////////////////////////////////////////////////////////
