@@ -9,12 +9,14 @@
  *     fn("hel,lowo,rld", 0) - Throws
  */
 function getTheCommaIndexAt(str, commaIndex) {
-	var index = -1,
+	
+	console.assert(commaIndex < 1,'commaIndex');
+	var index = -1;
 	for (var i = 0; i < commaIndex; i++) {
 		index = str.indexOf(',',index+1);
-		if (i === commaIndex-1 && index > -1) {
-			break;
-		} else if (index === -1) {
+		//  If indexOf return -1 no comma found so break and return -1
+		//  If it is the commaIndex value and greater than -1
+		if (i === (commaIndex - 1) && index > -1 || index === -1) {
 			break;
 		}
 	}
