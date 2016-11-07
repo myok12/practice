@@ -7,3 +7,25 @@
  * containsValue([1,3,5,7,9], 7) === true;
  * containsValue([9,7,5,3,1], 7) === true;
  */
+function containsValue(arrayList, searchValue) {
+
+	for (var i = 0; i < arrayList.length; ++i) {
+		if (arrayList[i] === searchValue) {
+			//  We found a match
+			return true;
+		}
+	}
+	//  No match
+	return false;
+}
+
+// Test function 
+function testContainsValue(arrayList, searchValue, expectedOutcome) {
+	console.assert(containsValue(arrayList, searchValue) === expectedOutcome);
+}
+
+testContainsValue([1,3,5,7,9], 9, false);
+
+testContainsValue([1,3,5,7,9], 7, true);
+
+testContainsValue([9,7,5,3,1], 7, true);
