@@ -8,12 +8,12 @@
  */
 
 /////////////////////////////////////////////////////////////////////////////
-// getThirdCommaIndex accepts a string and returns the index of the third comma in that string /  no comma return -1
+// getThirdCommaIndex accepts a string and returns the index of the third comma in that string if no comma return -1
 function getThirdCommaIndex(str,searcFor) {
 
-	var i, index = -1;
+        var index = -1;
 
-	for (i = 0; i < 3; i++) {
+	for (let i = 0; i < 3; i++) {
 		index = str.indexOf(searcFor, index+1);
 		if (index == -1) { 
 			break;
@@ -21,7 +21,6 @@ function getThirdCommaIndex(str,searcFor) {
 	}
 	return index;
 }
-
 
 function testFunction(str) {
 
@@ -31,4 +30,3 @@ function testFunction(str) {
 testFunction('hel,lowo,rld');// === -1
 testFunction('hello,world,this,is,a,great,day');// === 16
 testFunction(',,,');// === 2
-///////////////////////////////////////////////////////////////////////////
