@@ -10,9 +10,9 @@
 function containsValue(arrayNumber, searchForNumber) {
 
 	console.assert(isNumber(searchForNumber),'is not a number');
-	//  We define isNuberInArray as false so only if we find the search number we will set it to true 
+	//  We define isNumberInArray as false so only if we find the search number we will set it to true 
 	//  otherwise will return falsh
-	var isNuberInArray = false;
+	var isNumberInArray = false;
 	
 	//  Loop through arrayNumber 
 	for (var i = 0; i < arrayNumber.length; ++i) {
@@ -20,15 +20,15 @@ function containsValue(arrayNumber, searchForNumber) {
 		// Looking for searchForNumber in arrayNumber
 		if(arrayNumber[i] === searchForNumber) {
 			// We found a matching number in the arrayNumber 
-			// 1) so leti's set isNuberInArray to true 
+			// 1) so leti's set isNumberInArray to true 
 			// 2) and stop the loop
-			isNuberInArray = true;
+			isNumberInArray = true;
 			break;
 		}
 	}
 	// return falsh if no match 
 	// return true if found a match
-	return isNuberInArray; 
+	return isNumberInArray; 
 }
 //////////////////////////////////////////////////
 // set arrayNumber values
