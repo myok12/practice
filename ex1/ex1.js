@@ -9,12 +9,12 @@
 
 /////////////////////////////////////////////////////////////////////////////
 // getThirdCommaIndex accepts a string and returns the index of the third comma in that string if no comma return -1
-function getThirdCommaIndex(str,searcFor) {
+function getThirdCommaIndex(str,searchFor) {
 
         var index = -1;
 
 	for (let i = 0; i < 3; i++) {
-		index = str.indexOf(searcFor, index+1);
+		index = str.indexOf(searchFor, index+1);
 		if (index == -1) { 
 			break;
 		}
