@@ -15,10 +15,9 @@ function containsValue(arrayList, searchValue) {
 			//  We found a match
 			return true;
 		}
-
 	}
-
 	//  No match
 	return false;
 }
+
 module.exports = { containsValue }
