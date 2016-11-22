@@ -24,7 +24,7 @@ function firstUniqueChar(str) {
 		//  Let's see if we did look for searchChar
 		if (doNotLookForCharList.includes(searchChar) != true) {
 
-			//  searchChar is not in doNotLookForCharList so will search for it
+			//  SearchChar is not in doNotLookForCharList so will search for it
 			if (str.indexOf(searchChar, searchIndex + 1) < 0) {
         
 				// Good luck, we did find a unique char in str so we return the unique char

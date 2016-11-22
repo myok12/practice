@@ -18,19 +18,19 @@ describe("firstUniqueChar", function() {
 		expect(ex5.firstUniqueChar("abcdedcba")).toBe("e");
 	});
 
-	it("3 I do not know what to...", function() {
+	it("return null, we do not have a uniq char on string", function() {
 		expect(ex5.firstUniqueChar("abcdeedcba")).toBeNull();
 	});
 
-	it("4 I do not know what to...", function() {
+	it("finds 'c' as the first character in the string", function() {
 		expect(ex5.firstUniqueChar("abababcab")).toBe("c");
 	});
 
-	it("5 I do not know what to...", function() {
+	it("return null, all chars in string are same", function() {
 		expect(ex5.firstUniqueChar("aaaaaaaaa")).toBeNull();
 	});
 
-	it("6 I do not know what to...", function() {
+	it("finds 'a' as the first character in the strin", function() {
 		expect(ex5.firstUniqueChar("a")).toBe("a");
 	});
 });
