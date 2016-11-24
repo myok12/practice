@@ -13,23 +13,23 @@ var ex6 = require('./ex6.js');
 
 describe("split", function() {
 
-	it("returns 3 chracters", function() {
-		expect(ex6.split('a,b,c')).toBe('a,b,c');
+	it("returns 3 elements", function() {
+		expect(ex6.split('a,b,c')).toBe(['a','b','c']);
 	});
 
 	it("returns 2 words", function() {
-		expect(ex6.split('hello,world')).toBe('hello,world');
+		expect(ex6.split('hello,world')).toBe(['hello', 'world']);
 	});
 
 	it("returns one word", function() {
-		expect(ex6.split('hello')).toBe('hello');
+		expect(ex6.split('hello')).toBe(['hello']);
 	});
 
-	it("return sam words and empty index's", function() {
-		expect(ex6.split('hello,,,world')).toBe('hello,,,world');		
+	it("works with empty strings", function() {
+		expect(ex6.split('hello,,,world')).toBe(['hello', '', '', 'world']);		
 	});
 
 	it("returns an ampty arry", function() {
-		expect(ex6.split('')).toBe('');
+		expect(ex6.split('')).toBe([]);
 	});
 });

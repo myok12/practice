@@ -19,31 +19,23 @@ function split(str) {
 		return [];
 	}
 
-	if (str.indexOf(',', 0) === -1) {
+	//  Find a comma so we split string to array
+	for (var i = 0; i < str.length; i++) {
 
-		//  Find no comma so we push str 
-		strArray.push(str);
+		if (str[i] === ',') {
 
-	 } else {
+			strArray.push(tmpStr);
+			tmpStr = '';
 
-		//  Find a comma so we split string to array
-		for (var i = 0; i < str.length; i++) {
+		} else {
 
-			if (str[i] === ',') {
-
-				strArray.push(tmpStr);
-				tmpStr = '';
-
-			} else {
-
-				tmpStr += str[i];
-
-			}
+			tmpStr += str[i];
 
 		}
-		// We have to push the last tmpStr
-		strArray.push(tmpStr);
+
 	}
+	// We have to push the last tmpStr
+	strArray.push(tmpStr);
 	//  Return the array
 	//return strArray;
 	console.log('array > ', strArray);
