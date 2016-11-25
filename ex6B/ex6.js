@@ -37,7 +37,7 @@ function split(str) {
 	// We have to push the last tmpStr
 	strArray.push(tmpStr);
 	//  Return the array
-	//return strArray;
+	return strArray;
 	console.log('array > ', strArray);
 }
 
