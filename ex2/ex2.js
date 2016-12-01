@@ -10,7 +10,7 @@
  */
 function getTheCommaIndexAt(str, commaIndex) {
 
-	if (commaIndex === 0) {
+	if (commaIndex <= 0) {
 		throw new RangeError('Invalid # of comma');
 	}
 

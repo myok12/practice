@@ -24,4 +24,11 @@ describe("getTheCommaIndexAt", function(){
 			})
 		.toThrow('Invalid # of comma');
 	});
+
+	it("throw an Error if the n argument is invalid: negative number", function(){
+		expect(function() { 
+			getTheCommaIndexAt(',,,', -1); 
+			})
+		.toThrow('Invalid # of comma');
+	});
 });
