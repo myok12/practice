@@ -10,7 +10,7 @@ describe("getTheCommaIndexAt", function(){
 		expect(getTheCommaIndexAt('hello,world,this,is,a,great,day', 4)).toBe(19);
 	});
 
-	it("finds the 1th comma in a string", function(){
+	it("finds the 1st comma in a string", function(){
 		expect(getTheCommaIndexAt(',,,', 1)).toBe(0);
 	});
 
