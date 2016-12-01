@@ -53,4 +53,4 @@ function isNumber(val) {
 
 }
 
-module.exports = {toNumber: toNumber}
+module.exports = toNumber;
