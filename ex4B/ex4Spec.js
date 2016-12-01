@@ -1,6 +1,6 @@
 var toNumber = require('./ex4.js');
 
-describe("toNumber", function() {
+describe("function toNumber", function() {
 
 	///////////////////////////////////////////////////////////////////////	
 	// Numbers
