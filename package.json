@@ -1,0 +1,22 @@
+{
+  "name": "practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "find . -name *Spec.js | grep -v node_modules | xargs node_modules/jasmine/bin/jasmine.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myok12/practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/myok12/practice/issues"
+  },
+  "homepage": "https://github.com/myok12/practice#readme",
+  "dependencies": {
+    "jasmine": "^2.5.2"
+  }
+}
