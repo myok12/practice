@@ -11,7 +11,7 @@
 function getTheCommaIndexAt(str, commaIndex) {
 
 	if (commaIndex === 0) {
-		throw new RangeError('Throws...');
+		throw new RangeError('Invalid # of comma');
 	}
 
 	var index = -1;
@@ -28,4 +28,4 @@ function getTheCommaIndexAt(str, commaIndex) {
 	}
 	return index;
 }
-module.exports = { getTheCommaIndexAt }
+module.exports = getTheCommaIndexAt;
