@@ -14,7 +14,7 @@ describe("getTheCommaIndexAt", function(){
 		expect(getTheCommaIndexAt(',,,', 1)).toBe(0);
 	});
 
-	it("finds the 4th comma in a string", function(){		
+	it("returns -1 when an n-th comma is missing", function(){		
 		expect(getTheCommaIndexAt(',,,', 4)).toBe(-1);
 	});
 
