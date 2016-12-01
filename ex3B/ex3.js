@@ -20,4 +20,4 @@ function containsValue(arrayList, searchValue) {
 	return false;
 }
 
-module.exports = { containsValue: containsValue }
+module.exports = containsValue;
