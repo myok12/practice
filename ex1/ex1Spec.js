@@ -1,6 +1,6 @@
 var getThirdCommaIndex = require("./ex1");
 
-describe("getThirdCommaIndex", function() {
+describe("function getThirdCommaIndex", function() {
 
 	it("returns -1 when no third comma", function() {
 		expect(getThirdCommaIndex('hel,lowo,rld', ','))
