@@ -7,3 +7,17 @@
  * containsValue([1,3,5,7,9], 7) === true;
  * containsValue([9,7,5,3,1], 7) === true;
  */
+function containsValue(valueArr, searchValue) {
+
+	for (var i = 0; i < valueArr.length; ++i) {
+
+		if (valueArr[i] === searchValue) {
+			//  We found a match
+			return true;
+		}
+	}
+	//  No match
+	return false;
+}
+
+module.exports = containsValue;
