@@ -7,23 +7,15 @@
  *     fn("hel,lowo,rld") === -1
  */
 
-/////////////////////////////////////////////////////////////////////////////
-// Accepts a string and returns the index of the third comma in that string if no comma return -1
-//
-//
-
-
 function getThirdCommaIndex(str,searchFor) {
         
-	//  i do not know how to explain the use of  -1
         var index = -1;
 
 	for (var i = 0; i < 3; i++) {
 
 		index = str.indexOf(searchFor, index + 1);
 
-		//  If we did not find a comma in str will stop search
-	
+		//  If we did not find a comma in str will stop searching
 		if (index == -1) { 
 			break;
 		}
@@ -31,4 +23,4 @@ function getThirdCommaIndex(str,searchFor) {
 	return index;
 }
 
-module.exports = { getThirdCommaIndex }
+module.exports = getThirdCommaIndex;
