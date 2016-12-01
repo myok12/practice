@@ -6,7 +6,7 @@ describe("getTheCommaIndexAt", function(){
 		expect(getTheCommaIndexAt('hello,world,this,is,a,great,day', 3)).toBe(16);
 	});
 
-	it("finds the 19th comma in a string", function(){
+	it("finds the 4th comma in a string", function(){
 		expect(getTheCommaIndexAt('hello,world,this,is,a,great,day', 4)).toBe(19);
 	});
 
