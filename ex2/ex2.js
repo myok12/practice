@@ -28,4 +28,5 @@ function getTheCommaIndexAt(str, commaIndex) {
 	}
 	return index;
 }
+
 module.exports = getTheCommaIndexAt;
