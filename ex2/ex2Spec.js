@@ -1,6 +1,6 @@
 var getTheCommaIndexAt= require('./ex2.js');
 
-describe("getTheCommaIndexAt", function(){
+describe("function getTheCommaIndexAt", function(){
 
 	it("finds the 3th comma in astring", function(){
 		expect(getTheCommaIndexAt('hello,world,this,is,a,great,day', 3))
