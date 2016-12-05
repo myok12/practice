@@ -8,7 +8,7 @@
  */
 function toNumber(str) {
 
-	var tmpStr = '', i = 0, dotRepeat = null;
+	var tmpStr = '', i = 0, allowDot = true;
 
 	// Negative sine can appear only at the start of string and followed by number
 	if (str.slice(i, i + 1) === '-' && isNumber(str.slice(i+1, i + 2))) {
@@ -24,11 +24,11 @@ function toNumber(str) {
 
 	for (;i < str.length; i++) {
 
-		if (isNumber(str.slice(i, i + 1)) ||  str.slice(i, i + 1) === '.' && !dotRepeat) {
+		if (isNumber(str.slice(i, i + 1)) ||  str.slice(i, i + 1) === '.' && allowDot) {
  
 			// Ziro tolerants for dots
 			if (str.slice(i, i + 1) === '.') {
-				dotRepeat = true;
+				allowDot = false;
 			} 
 			tmpStr += str.slice(i, i + 1);  
 
