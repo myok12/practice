@@ -38,13 +38,6 @@ function split(str) {
 	strArray.push(tmpStr);
 	//  Return the array
 	return strArray;
-	console.log('array > ', strArray);
 }
 
-//split('a,b,c');// === ['a', 'b', 'c']
-//split('hello,world');// === ['hello', 'world']
-//split('hello');// === ['hello']
-//split('hello,,,world');// === ['hello', '', '', 'world']
-split('');// === []
-
-module.exports = {split: split} 
+module.exports = split; 
