@@ -11,13 +11,14 @@ function toNumber(str) {
 	var tmpStr = '', i = 0, allowDot = true;
 
 	// Negative sige can appear only at the start of string and followed by number
-	if (str.slice(i, i + 1) === '-' && isNumber(str.slice(i+1, i + 2))) {
+	//if (str.slice(0, 1) === '-' && isNumber(str.slice(1, 2))) {
 	
-		tmpStr += str.slice(i, i + 2);  
+	if (str.charAt(0) === '-' && isNumber(str.charAt(1))) {
+		tmpStr += str.slice(0, 2);  
 		i = 2;
 	}
 
-	// Dot cannot appear at the start or and of string
+	// Dot cannot appear at the start or at the end of string
 	if (str[0] === '.' || str[str.length - 1]=== '.') {
 		return null;
 	}
@@ -26,7 +27,7 @@ function toNumber(str) {
 
 		if (isNumber(str.slice(i, i + 1)) ||  str.slice(i, i + 1) === '.' && allowDot) {
  
-			// Zero tolerants for dots
+			// Zero tolerance for dots
 			if (str.slice(i, i + 1) === '.') {
 				allowDot = false;
 			} 
