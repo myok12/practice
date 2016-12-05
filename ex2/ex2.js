@@ -22,7 +22,7 @@ function getTheCommaIndexAt(str, commaIndex) {
 
 		//  If indexOf return -1 no comma found so break and return -1
 		//  If it is the commaIndex value and greater than -1
-		if (i === (commaIndex - 1) && index > -1 || index === -1) {
+		if (i === (commaIndex - 1) || index === -1) {
 			break;
 		}
 	}
