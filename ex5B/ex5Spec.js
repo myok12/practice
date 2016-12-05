@@ -1,23 +1,23 @@
-var ex5 = require('./ex5.js');
+var firstUniqueChar = require('./ex5.js');
 
-describe("firstUniqueChar", function() {
-	it("finds another unique character in the string", function() {
-		expect(ex5.firstUniqueChar("abcdedcba")).toBe("e");
+describe("function firstUniqueChar", function() {
+	it("finds another unique character e in the string", function() {
+		expect(firstUniqueChar("abcdedcba")).toBe("e");
 	});
 
 	it("return null when we only have one [non-unique] char", function() {
-		expect(ex5.firstUniqueChar("abcdeedcba")).toBeNull();
+		expect(firstUniqueChar("abcdeedcba")).toBeNull();
 	});
 
-	it("finds another unique character in the string", function() {
-		expect(ex5.firstUniqueChar("abababcab")).toBe("c");
+	it("finds another unique character e in the string", function() {
+		expect(firstUniqueChar("abababcab")).toBe("c");
 	});
 
-	it("return null, all chars are same, function() {
-		expect(ex5.firstUniqueChar("aaaaaaaaa")).toBeNull();
+	it("return null, all chars are same", function() {
+		expect(firstUniqueChar("aaaaaaaaa")).toBeNull();
 	});
 
 	it("works for a single character", function() {
-		expect(ex5.firstUniqueChar("a")).toBe("a");
+		expect(firstUniqueChar("a")).toBe("a");
 	});
 });

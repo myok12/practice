@@ -39,4 +39,4 @@ function firstUniqueChar(str) {
 	return null;
 }
 
-module.exports = { firstUniqueChar: firstUniqueChar }
+module.exports = firstUniqueChar; 
