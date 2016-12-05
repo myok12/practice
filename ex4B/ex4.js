@@ -10,7 +10,7 @@ function toNumber(str) {
 
 	var tmpStr = '', i = 0, allowDot = true;
 
-	// Negative sine can appear only at the start of string and followed by number
+	// Negative sige can appear only at the start of string and followed by number
 	if (str.slice(i, i + 1) === '-' && isNumber(str.slice(i+1, i + 2))) {
 	
 		tmpStr += str.slice(i, i + 2);  
@@ -26,7 +26,7 @@ function toNumber(str) {
 
 		if (isNumber(str.slice(i, i + 1)) ||  str.slice(i, i + 1) === '.' && allowDot) {
  
-			// Ziro tolerants for dots
+			// Zero tolerants for dots
 			if (str.slice(i, i + 1) === '.') {
 				allowDot = false;
 			} 
