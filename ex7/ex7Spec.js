@@ -19,7 +19,6 @@ describe("mostFrequentChar", function() {
 	});
 
 	it("returns null because input is empty", function(){
-		fail();
 		expect(mostFrequentChar('')).toBeNull();
 	});
 });
