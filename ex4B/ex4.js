@@ -25,13 +25,13 @@ function toNumber(str) {
 
 	for (;i < str.length; i++) {
 
-		if (isNumber(str.slice(i, i + 1)) ||  str.slice(i, i + 1) === '.' && allowDot) {
+		if (isNumber(str.charAt(i)) ||  str.charAt(i) === '.' && allowDot) {
  
 			// Zero tolerance for dots
-			if (str.slice(i, i + 1) === '.') {
+			if (str.charAt(i) === '.') {
 				allowDot = false;
 			} 
-			tmpStr += str.slice(i, i + 1);  
+			tmpStr += str.charAt(i);  
 
 		} else {
 
