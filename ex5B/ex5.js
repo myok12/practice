@@ -10,8 +10,45 @@
  * firstUniqueChar("aaaaaaaaa") === null
  * firstUniqueChar("a") === "a"
  */
-
 function firstUniqueChar(str) {
+
+        var charList = {}, firstUniqueCharVal = null;
+
+        for (var searchIndex = 0; searchIndex < str.length; searchIndex++) {
+
+                if (charList[str.charAt(searchIndex)] === undefined) {
+
+			// Creat new property
+			charList[str.charAt(searchIndex)] = 1;
+
+                } else {
+			// Add to property
+                        charList[str.charAt(searchIndex)] += 1;
+
+                }
+        }
+
+        for (searchIndex = 0; searchIndex < Object.keys(charList).length; searchIndex++) {
+
+                if (charList[Object.keys(charList)[searchIndex]] === 1) {
+
+                        if (firstUniqueCharVal === null) {
+
+                                firstUniqueCharVal = Object.keys(charList)[searchIndex];
+
+                       } else {
+
+                                firstUniqueCharVal = null;
+                                break;
+                        }
+                }
+        }
+        return firstUniqueCharVal;
+}
+
+
+// 6, 9, 16 s
+function AfirstUniqueChar(str) {
 
 	var doNotLookForCharList = '', searchChar = ''; 
 
