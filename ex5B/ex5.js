@@ -12,7 +12,7 @@
  */
 function firstUniqueChar(str) {
 
-        var charCounter = {}, firstUniqueCharVal = null;
+        var charCounter = {}, firstChar = null;
 
         for (var searchIndex = 0; searchIndex < str.length; searchIndex++) {
 
@@ -34,18 +34,18 @@ function firstUniqueChar(str) {
 
                 if (charCounter[keysCharCounter[searchIndex]] === 1) {
 
-                        if (firstUniqueCharVal === null) {
+                        if (firstChar === null) {
 
-                                firstUniqueCharVal = keysCharCounter[searchIndex];
+                                firstChar = keysCharCounter[searchIndex];
 
                        } else {
 
-                                firstUniqueCharVal = null;
+                                firstChar = null;
                                 break;
                         }
                 }
         }
-        return firstUniqueCharVal;
+        return firstChar;
 }
 
 
