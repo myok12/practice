@@ -12,29 +12,29 @@
  */
 function firstUniqueChar(str) {
 
-        var charList = {}, firstUniqueCharVal = null;
+        var charCounter = {}, firstUniqueCharVal = null;
 
         for (var searchIndex = 0; searchIndex < str.length; searchIndex++) {
 
-                if (charList[str.charAt(searchIndex)] === undefined) {
+                if (charCounter[str.charAt(searchIndex)] === undefined) {
 
 			// Creat new property
-			charList[str.charAt(searchIndex)] = 1;
+			charCounter[str.charAt(searchIndex)] = 1;
 
                 } else {
 			// Add to property
-                        charList[str.charAt(searchIndex)] += 1;
+                        charCounter[str.charAt(searchIndex)] += 1;
 
                 }
         }
 
-        for (searchIndex = 0; searchIndex < Object.keys(charList).length; searchIndex++) {
+        for (searchIndex = 0; searchIndex < Object.keys(charCounter).length; searchIndex++) {
 
-                if (charList[Object.keys(charList)[searchIndex]] === 1) {
+                if (charCounter[Object.keys(charCounter)[searchIndex]] === 1) {
 
                         if (firstUniqueCharVal === null) {
 
-                                firstUniqueCharVal = Object.keys(charList)[searchIndex];
+                                firstUniqueCharVal = Object.keys(charCounter)[searchIndex];
 
                        } else {
 
