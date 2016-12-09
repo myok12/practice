@@ -40,7 +40,7 @@ function firstUniqueChar(str) {
 
                        } else {
 
-                                firstChar = null;
+                                return null;
                                 break;
                         }
                 }
