@@ -1,16 +1,33 @@
 var firstUniqueChar = require('./ex5.js');
 
 describe("function firstUniqueChar", function() {
-	it("finds another unique character e in the string", function() {
-		expect(firstUniqueChar("abcdedcba")).toBe("e");
+
+	it("finds a unique character at start, one unique char", function() {
+		expect(firstUniqueChar("zabcdabcd")).toBe("z");
+	});
+
+	it("finds a unique character at middle, one unique char", function() {
+		expect(firstUniqueChar("abcdzabcd")).toBe("z");
+	});
+
+	it("finds a unique character at the end, one unique char", function() {
+		expect(firstUniqueChar("abcdabcdz")).toBe("z");
+	});
+
+	it("finds a unique character at start, 3 unique char", function() {
+		expect(firstUniqueChar("123abcdabcd")).toBe("1");
+	});
+
+	it("finds a unique character at middle, 3 unique char", function() {
+		expect(firstUniqueChar("abcd123abcd")).toBe("1");
+	});
+
+	it("finds a unique character at the end, 3 unique char", function() {
+		expect(firstUniqueChar("abcdabcd123")).toBe("1");
 	});
 
 	it("return null, all chars are duplicated", function() {
 		expect(firstUniqueChar("abcdeedcba")).toBeNull();
-	});
-
-	it("finds another unique character e in the string", function() {
-		expect(firstUniqueChar("abababcab")).toBe("c");
 	});
 
 	it("return null, all chars are same", function() {
@@ -26,5 +43,9 @@ describe("function firstUniqueChar", function() {
 
 	it("works for a single character", function() {
 		expect(firstUniqueChar("a")).toBe("a");
+	});
+
+	it("works for an empty string", function() {
+		expect(firstUniqueChar("")).toBeNull();
 	});
 });
