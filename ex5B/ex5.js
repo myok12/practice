@@ -36,13 +36,9 @@ function firstUniqueChar(str) {
 
                         if (firstChar === null) {
 
-                                firstChar = keysCharCounter[searchIndex];
+                                return keysCharCounter[searchIndex];
 
-                       } else {
-
-                                return null;
-                                break;
-                        }
+                       }
                 }
         }
         return firstChar;
