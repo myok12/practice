@@ -8,14 +8,22 @@
  */
 function toNumber(str) {
 
-	var tmpStr = '', i = 0, allowDot = true;
+	var strNum = '', strDec = '', number = null, i = 0, allowDot = true, negative = false;
 
 	// Negative sige can appear only at the start of string and followed by number
 	//if (str.slice(0, 1) === '-' && isNumber(str.slice(1, 2))) {
 	
-	if (str.charAt(0) === '-' && isNumber(str.charAt(1))) {
-		tmpStr += str.slice(0, 2);  
-		i = 2;
+	if (str.charAt(0) === '-' ) {
+		
+		if (isNumber(str.charAt(1))) {
+
+			negative = true;  
+			i = 1;
+
+		} else {
+		
+			return null;
+		}
 	}
 
 	// Dot cannot appear at the start or at the end of string
@@ -29,9 +37,19 @@ function toNumber(str) {
  
 			// Zero tolerance for dots
 			if (str.charAt(i) === '.') {
+
 				allowDot = false;
-			} 
-			tmpStr += str.charAt(i);  
+				continue;
+			}
+
+			if (!allowDot) {
+
+				strDec += str.charAt(i);  
+
+			} else {
+
+				strNum += str.charAt(i);  
+			}
 
 		} else {
 
@@ -40,9 +58,38 @@ function toNumber(str) {
 		}
 	}
 
-	return Number(tmpStr);
+	number = strToNumber(strNum) + strToDec("0"+strDec);
+
+	if (negative === true) {
+
+		number = -1 * number;
+
+	}
+
+	return number;
 }
 
+function strToNumber(str) {
+
+	var num = 0;
+
+	for (var i = 0; i < str.length; i++) { 
+		num = num * 10;
+		num += str[i].charCodeAt() - 48;
+	}
+	return num;
+}
+
+function strToDec(str) {
+
+	var num = 0;
+
+	for (var i = str.length; i > 0; i--) { 
+		num = num  / 10;
+		num += str[i-1].charCodeAt() - 48;
+	}
+	return num;
+}
 
 function isNumber(val) {
 

@@ -9,11 +9,11 @@ describe("function toNumber", function() {
 	});
 	
 	it("converts 2 digits", function() {
-		expect(toNumber("71")).toMatch(71);
+		expect(toNumber("71")).toBe(71);
 	});
 
 	it("converts many digits", function() {
-		expect(toNumber("712387328182")).toMatch(712387328182);
+		expect(toNumber("712387328182")).toBe(712387328182);
 	});
 	
 	///////////////////////////////////////////////////////////////////////	
