@@ -5,7 +5,7 @@ describe("function firstUniqueChar", function() {
 		expect(firstUniqueChar("abcdedcba")).toBe("e");
 	});
 
-	it("return null when we only have one [non-unique] char", function() {
+	it("return null, all chars are duplicated", function() {
 		expect(firstUniqueChar("abcdeedcba")).toBeNull();
 	});
 
