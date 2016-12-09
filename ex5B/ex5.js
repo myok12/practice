@@ -27,14 +27,16 @@ function firstUniqueChar(str) {
 
                 }
         }
+	
+	keysCharCounter = Object.keys(charCounter);
 
-        for (searchIndex = 0; searchIndex < Object.keys(charCounter).length; searchIndex++) {
+        for (searchIndex = 0; searchIndex < keysCharCounter.length; searchIndex++) {
 
-                if (charCounter[Object.keys(charCounter)[searchIndex]] === 1) {
+                if (charCounter[keysCharCounter[searchIndex]] === 1) {
 
                         if (firstUniqueCharVal === null) {
 
-                                firstUniqueCharVal = Object.keys(charCounter)[searchIndex];
+                                firstUniqueCharVal = keysCharCounter[searchIndex];
 
                        } else {
 
