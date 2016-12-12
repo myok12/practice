@@ -12,21 +12,91 @@
  */
 function firstUniqueChar(str) {
 
+  var objCharCounter = {}, objFirstChar = { charVal: null }, searchIndex = 0;
+
+  for (searchIndex = 0; searchIndex < str.length; searchIndex++) {
+
+    if (objCharCounter[str.charAt(searchIndex)] === undefined) {
+
+      // Create new property
+      objCharCounter[str.charAt(searchIndex)] = { index: searchIndex, count: 1};
+
+    } else {
+
+      // Add to property
+      objCharCounter[str.charAt(searchIndex)].count += 1;
+
+   }
+
+  }
+
+  charArray = Object.keys(objCharCounter);
+
+  for (searchIndex = 0; searchIndex < Object.keys(objCharCounter).length; searchIndex++) {
+
+		if (objCharCounter[charArray[searchIndex]].count === 1) {
+			if (objFirstChar.charVal === null || objCharCounter[charArray[searchIndex]].index < objFirstChar.charVal){
+
+				objFirstChar.charVal = charArray[searchIndex];
+				objFirstChar.count = objCharCounter[charArray[searchIndex]].count;
+				objFirstChar.index = objCharCounter[charArray[searchIndex]].index;
+
+		 }
+		}
+	}
+	return objFirstChar.charVal;
+}
+
+function BfirstUniqueChar(str) {
+
         var charCounter = {}, firstChar = null;
 
         for (var searchIndex = 0; searchIndex < str.length; searchIndex++) {
-
                 if (charCounter[str.charAt(searchIndex)] === undefined) {
 
-			// Creat new property
+                        // Create new property
+objCharCount[str.charAt(searchIndex)] = { index: searchIndex, count: 1};
+                } else {
+                        // Add to property
+                        objCharCounter[str.charAt(searchIndex)].count += 1;
+
+                }
+        }
+        keysCharCounter = Object.keys(charCounter);
+
+        for (searchIndex = 0; searchIndex <Object.keys(charCounter).length; searchIndex++) {
+
+                if (objCharCounter[keysCharCounter[searchIndex]] === 1) {
+			
+			if (charCounter[keysCharCounter[searchIndex+1]] !== 1) {
+
+                                firstChar = keysCharCounter[searchIndex].charAt(1);
+			} else {
+			return null;}
+                }
+        }
+        return firstChar;
+}
+
+
+function AfirstUniqueChar (str) {
+var charCounter = {}, firstChar = null, searchIndex = 0;
+
+  for (searchIndex = 0; searchIndex < str.length; searchIndex++)  {
+                if (charCounter[str.charAt(searchIndex)] === undefined) {
+			// Create new property
 			charCounter[str.charAt(searchIndex)] = 1;
 
                 } else {
+
 			// Add to property
                         charCounter[str.charAt(searchIndex)] += 1;
 
                 }
         }
+        for (var i = 0; i < 100; i++) {
+                 console.log('123');
+	}
 	
 	keysCharCounter = Object.keys(charCounter);
 
@@ -38,36 +108,6 @@ function firstUniqueChar(str) {
                 }
         }
         return firstChar;
-}
-
-
-// 6, 9, 16 s
-function AfirstUniqueChar(str) {
-
-	var doNotLookForCharList = '', searchChar = ''; 
-
-	for (var searchIndex = 0; searchIndex < str.length; searchIndex++) {
-
-		searchChar = str[searchIndex];
-
-		//  Let's see if we did look for searchChar
-		if (doNotLookForCharList.includes(searchChar) != true) {
-
-			//  SearchChar is not in doNotLookForCharList so will search for it
-			if (str.indexOf(searchChar, searchIndex + 1) < 0) {
-        
-				// Good luck, we did find a unique char in str so we return the unique char
-				return searchChar;
-
-			} else {
-			   //  We did find more then one searchChar in str
-			   //  So we will add searchChar to  doNotLookForCharList and continue
-			   doNotLookForCharList += searchChar;
-			}
-		} 	
-	}
-	//  We did get to the end of the str and no unique char in str so we return null
-	return null;
 }
 
 module.exports = firstUniqueChar; 
