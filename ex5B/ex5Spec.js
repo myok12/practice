@@ -3,7 +3,7 @@
 //  http://stackoverflow.com/questions/16260779/how-to-disable-the-warning-define-is-not-defined-using-jshint-and-requirejs
 var firstUniqueChar = require('./ex5.js');
 
-describe('function firstUniqueChar', function () {
+describe('functiona firstUniqueChar', function () {
   it('finds a unique character at start, one unique char', function () {
     expect(firstUniqueChar('zabcdabcd')).toBe('z');
   });
