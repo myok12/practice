@@ -19,8 +19,9 @@ function mostFrequentChar(str) {
 		search = { charValue: '', charCount: 0}, 
 		doNotSearchList = [];
 
-	if (str != '') {
-
+	if (str === '') {
+		return null;
+	}
 		// Loop through all chars in str
 		for (var i = 0; i < str.length; i++) {
 
@@ -59,7 +60,7 @@ function mostFrequentChar(str) {
 				}
 			}
 		}
-	}
+	
 	return  winnerChar;
 
 }
