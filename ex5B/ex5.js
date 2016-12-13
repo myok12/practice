@@ -12,19 +12,21 @@
  */
 function firstUniqueChar(str) {
 
-  var objCharCounter = {}, objFirstChar = { charVal: null }, searchIndex = 0;
+  var objCharCounter = {}, objFirstChar = { charVal: null }, searchIndex = 0, currentChar = '';
 
   for (searchIndex = 0; searchIndex < str.length; searchIndex++) {
 
-    if (objCharCounter[str.charAt(searchIndex)] === undefined) {
+    currentChar = str.charAt(searchIndex);
+
+    if (objCharCounter[currentChar] === undefined) {
 
       // Create new property
-      objCharCounter[str.charAt(searchIndex)] = { index: searchIndex, count: 1};
+      objCharCounter[currentChar] = { index: searchIndex, count: 1};
 
     } else {
 
       // Add to property
-      objCharCounter[str.charAt(searchIndex)].count += 1;
+      objCharCounter[currentChar].count += 1;
 
    }
 
@@ -45,69 +47,6 @@ function firstUniqueChar(str) {
 		}
 	}
 	return objFirstChar.charVal;
-}
-
-function BfirstUniqueChar(str) {
-
-        var charCounter = {}, firstChar = null;
-
-        for (var searchIndex = 0; searchIndex < str.length; searchIndex++) {
-                if (charCounter[str.charAt(searchIndex)] === undefined) {
-
-                        // Create new property
-objCharCount[str.charAt(searchIndex)] = { index: searchIndex, count: 1};
-                } else {
-                        // Add to property
-                        objCharCounter[str.charAt(searchIndex)].count += 1;
-
-                }
-        }
-        keysCharCounter = Object.keys(charCounter);
-
-        for (searchIndex = 0; searchIndex <Object.keys(charCounter).length; searchIndex++) {
-
-                if (objCharCounter[keysCharCounter[searchIndex]] === 1) {
-			
-			if (charCounter[keysCharCounter[searchIndex+1]] !== 1) {
-
-                                firstChar = keysCharCounter[searchIndex].charAt(1);
-			} else {
-			return null;}
-                }
-        }
-        return firstChar;
-}
-
-
-function AfirstUniqueChar (str) {
-var charCounter = {}, firstChar = null, searchIndex = 0;
-
-  for (searchIndex = 0; searchIndex < str.length; searchIndex++)  {
-                if (charCounter[str.charAt(searchIndex)] === undefined) {
-			// Create new property
-			charCounter[str.charAt(searchIndex)] = 1;
-
-                } else {
-
-			// Add to property
-                        charCounter[str.charAt(searchIndex)] += 1;
-
-                }
-        }
-        for (var i = 0; i < 100; i++) {
-                 console.log('123');
-	}
-	
-	keysCharCounter = Object.keys(charCounter);
-
-        for (searchIndex = 0; searchIndex < keysCharCounter.length; searchIndex++) {
-
-                if (charCounter[keysCharCounter[searchIndex]] === 1) {
-
-			return keysCharCounter[searchIndex];
-                }
-        }
-        return firstChar;
 }
 
 module.exports = firstUniqueChar; 
