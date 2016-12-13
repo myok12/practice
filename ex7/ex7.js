@@ -1,6 +1,5 @@
 /**
- * mostFrequentChar returns the character tha
- * t repeats itself the most in str. 
+ * mostFrequentChar returns the character that repeats itself the most in str. 
  * If there isn't one, returns null.
  *
  * For example:
@@ -13,57 +12,67 @@
 
 function mostFrequentChar(str) {
 
-	// If str empty tmpChar will return NULL
-	var  winnerChar= null, index = 0,
-		topRepeat = { charValue: '', charCount: 0}, 
-		search = { charValue: '', charCount: 0}, 
-		doNotSearchList = [];
+	objCharCount = {};
 
 	if (str === '') {
 		return null;
 	}
-		// Loop through all chars in str
-		for (var i = 0; i < str.length; i++) {
 
-			// The char we are now working on
-			search.charValue = str.charAt(i); 
-			search.charCount = 1; 
+	objCharCount = countChar(str);
 
-			// We will count only the char
-			if (doNotSearchList.indexOf(search.charValue, 0) === -1) {
-
-				// Add search char to doNotSearchList 
-				// So we do not look for it next time
-				doNotSearchList.push(search.charValue);
-
-				index = 1;
-				index = str.indexOf(search.charValue, i + index);
-
-				while (index !== -1) {
-
-					search.charCount += 1; 
-					index = str.indexOf(search.charValue, index + 1);
-				}
-
-				// Check if we have a winner, top repeat char 
-				// Only if we do have a winner will update topRepeat
-				if (search.charCount > topRepeat.charCount) {
-
-					topRepeat.charValue = search.charValue;
-					topRepeat.charCount = search.charCount;
-					winnerChar = topRepeat.charValue;
-
-				} else if (topRepeat.charCount === search.charCount) {
-					//  If top repeat char same to current search char count, so will set winnerChar to null
-					winnerChar = null;
-
-				}
-			}
-		}
-	
-	return  winnerChar;
-
+	return getFrequentChar(objCharCount);
 }
 
-//mostFrequentChar("zuriel yahav");
+function getFrequentChar(objCharCount) {
+	
+	var maxCount = 0,
+	  frequentChar = null,
+	  frequentCount = 0,
+	  arrayChar = [],
+	  currentCount = 0,
+	  currentChar = '';
+
+	arrayChar = Object.keys(objCharCount);
+
+	for (var i = 0; i < arrayChar.length; i++) {
+
+		currentChar = arrayChar[i];
+		currentCount = objCharCount[currentChar];
+
+		if (maxCount < currentCount) {
+
+			maxCount = currentCount;
+			frequentChar = currentChar;
+
+		} else if (maxCount === currentCount) {
+
+			frequentChar = null;
+
+		}
+	}
+	return frequentChar;
+}
+
+function countChar(str) { 
+
+	var objCharCount = {};
+
+	for (var i = 0; i < str.length; i++) {
+
+		// The char we are now working on
+		currentChar = str.charAt(i); 
+		
+		if (objCharCount[currentChar] === undefined) {
+
+			objCharCount[currentChar] = 1;
+
+		} else {
+
+			objCharCount[currentChar] = objCharCount[currentChar] += 1;
+
+		}
+	}
+	return objCharCount;
+}
+
 module.exports = mostFrequentChar; 
