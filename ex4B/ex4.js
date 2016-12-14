@@ -10,18 +10,13 @@
 const CODE_FOR_0 = "0".charCodeAt();
 
 function toNumber(str) {
-
 	var strNum = '', strDec = '', number = null, i = 0, seenDot = false, negative = false;
-	// Negative sign can appear only at the start of string and followed by number
-	//if (str.slice(0, 1) === '-' && isNumber(str.slice(1, 2))) {
-	
-	if (str.charAt(0) === '-' ) {
-		
-		if (isNumber(str.charAt(1))) {
 
+	// Negative sign can appear only at the start of string and followed by number
+	if (str.charAt(0) === '-' ) {
+		if (isNumber(str.charAt(1))) {
 			negative = true;  
 			i = 1;
-
 		} else {
 			// Will catch "-.3", for example	
 			return null;
@@ -34,45 +29,34 @@ function toNumber(str) {
 	}
 
 	for (;i < str.length; i++) {
-
 		if (isNumber(str.charAt(i)) ||  str.charAt(i) === '.' && !seenDot) {
  
 			// Zero tolerance for dots
 			if (str.charAt(i) === '.') {
-
 				seenDot = true;
 				continue;
 			}
 
 			if (seenDot) {
-
 				strDec += str.charAt(i);  
-
 			} else {
-
 				strNum += str.charAt(i);  
 			}
-
 		} else {
-
 			return null;
-
 		}
 	}
 
 	number = strToNumber(strNum) + strToDec("0"+strDec);
 
 	if (negative === true) {
-
 		number = -1 * number;
-
 	}
 
 	return number;
 }
 
 function strToNumber(str) {
-
 	var num = 0;
 
 	for (var i = 0; i < str.length; i++) { 
@@ -83,7 +67,6 @@ function strToNumber(str) {
 }
 
 function strToDec(str) {
-
 	var num = 0;
 
 	for (var i = str.length; i > 0; i--) { 
@@ -94,13 +77,11 @@ function strToDec(str) {
 }
 
 function isNumber(val) {
-
 	if (val >= 0 && val <= 9) {
 		return true;
 	} else {
 		return false;
 	}
-
 }
 
 module.exports = toNumber;
