@@ -12,38 +12,50 @@
  */
 function firstUniqueChar(str) {
 
-  var objCharCounter = {}, objFirstChar = { charVal: null }, searchIndex = 0, currentChar = '';
+	var objCharCounte = buildCharIndicesMap(str);
 
-  for (searchIndex = 0; searchIndex < str.length; searchIndex++) {
+	return findFirstUniqueCharInMap(objCharCounte);
+}
 
-    currentChar = str.charAt(searchIndex);
+function buildCharIndicesMap(str) {
 
-    if (objCharCounter[currentChar] === undefined) {
+	var objCharCounter = {},  searchIndex = 0, currentChar = '';
 
-      // Create new property
-      objCharCounter[currentChar] = { index: searchIndex, count: 1};
+	for (searchIndex = 0; searchIndex < str.length; searchIndex++) {
 
-    } else {
+		currentChar = str.charAt(searchIndex);
 
-      // Add to property
-      objCharCounter[currentChar].count += 1;
+		if (objCharCounter[currentChar] === undefined) {
 
-   }
+			// Create new property
+			objCharCounter[currentChar] = { firstIndex: searchIndex, count: 1};
 
-  }
+		} else {
 
-  charArray = Object.keys(objCharCounter);
+			// Add to property
+			objCharCounter[currentChar].count += 1;
 
-  for (searchIndex = 0; searchIndex < Object.keys(objCharCounter).length; searchIndex++) {
+		}
+
+	}
+	return objCharCounter;
+}
+
+function findFirstUniqueCharInMap(objCharCounter) {
+	
+	var charArray = [], objFirstChar = { charVal: null };
+	
+	charArray = Object.keys(objCharCounter);
+
+	for (searchIndex = 0; searchIndex < charArray.length; searchIndex++) {
 
 		if (objCharCounter[charArray[searchIndex]].count === 1) {
-			if (objFirstChar.charVal === null || objCharCounter[charArray[searchIndex]].index < objFirstChar.charVal){
+			if (objFirstChar.charVal === null || objCharCounter[charArray[searchIndex]].firstIndex < objFirstChar.charVal){
 
 				objFirstChar.charVal = charArray[searchIndex];
 				objFirstChar.count = objCharCounter[charArray[searchIndex]].count;
-				objFirstChar.index = objCharCounter[charArray[searchIndex]].index;
-
-		 }
+				objFirstChar.firstIndex = objCharCounter[charArray[searchIndex]].firstIndex;
+			  }
 		}
 	}
 	return objFirstChar.charVal;
