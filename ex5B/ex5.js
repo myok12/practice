@@ -54,9 +54,9 @@ function findFirstUniqueCharInMap(objCharCounter) {
 		currentFirstIndex = objCharCounter[currentChar].firstIndex;
 		
 		if (currentCounter === 1) {
-			if (objFirstChar.charVal === null || currentFirstIndex < objFirstChar.charVal){
 
-				objFirstChar.charVal = charArray[searchIndex];
+			if (objFirstChar.charVal === null || currentFirstIndex < objFirstChar.firstIndex){
+				objFirstChar.charVal = currentChar;
 				objFirstChar.count = currentCounter;
 				objFirstChar.firstIndex = currentFirstIndex;
 			  }
