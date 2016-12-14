@@ -6,10 +6,12 @@
  * toNumber("71") === 71
  * toNumber("a7") === null
  */
+
+const CODE_FOR_0 = "0".charCodeAt();
+
 function toNumber(str) {
 
 	var strNum = '', strDec = '', number = null, i = 0, seenDot = false, negative = false;
-	const CODE_FOR_0 = "0".charCodeAt();
 	// Negative sign can appear only at the start of string and followed by number
 	//if (str.slice(0, 1) === '-' && isNumber(str.slice(1, 2))) {
 	
@@ -21,7 +23,7 @@ function toNumber(str) {
 			i = 1;
 
 		} else {
-		
+			// Will catch "-.3", for example	
 			return null;
 		}
 	}
@@ -58,7 +60,7 @@ function toNumber(str) {
 		}
 	}
 
-	number = strToNumber(strNum, CODE_FOR_0) + strToDec("0"+strDec, CODE_FOR_0);
+	number = strToNumber(strNum) + strToDec("0"+strDec);
 
 	if (negative === true) {
 
@@ -69,7 +71,7 @@ function toNumber(str) {
 	return number;
 }
 
-function strToNumber(str, CODE_FOR_0) {
+function strToNumber(str) {
 
 	var num = 0;
 
@@ -80,7 +82,7 @@ function strToNumber(str, CODE_FOR_0) {
 	return num;
 }
 
-function strToDec(str, CODE_FOR_0) {
+function strToDec(str) {
 
 	var num = 0;
 
