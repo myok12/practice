@@ -43,18 +43,22 @@ function buildCharIndicesMap(str) {
 
 function findFirstUniqueCharInMap(objCharCounter) {
 	
-	var charArray = [], objFirstChar = { charVal: null };
+	var charArray = [], objFirstChar = { charVal: null }, currentChar, currentCounter = 0, currentFirstIndex = 0;
 	
 	charArray = Object.keys(objCharCounter);
 
 	for (searchIndex = 0; searchIndex < charArray.length; searchIndex++) {
-
-		if (objCharCounter[charArray[searchIndex]].count === 1) {
-			if (objFirstChar.charVal === null || objCharCounter[charArray[searchIndex]].firstIndex < objFirstChar.charVal){
+		
+		currentChar = charArray[searchIndex];
+		currentCounter = objCharCounter[currentChar].count;
+		currentFirstIndex = objCharCounter[currentChar].firstIndex;
+		
+		if (currentCounter === 1) {
+			if (objFirstChar.charVal === null || currentFirstIndex < objFirstChar.charVal){
 
 				objFirstChar.charVal = charArray[searchIndex];
-				objFirstChar.count = objCharCounter[charArray[searchIndex]].count;
-				objFirstChar.firstIndex = objCharCounter[charArray[searchIndex]].firstIndex;
+				objFirstChar.count = currentCounter;
+				objFirstChar.firstIndex = currentFirstIndex;
 			  }
 		}
 	}
