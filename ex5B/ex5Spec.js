@@ -4,6 +4,7 @@
 var firstUniqueChar = require('./ex5.js');
 
 describe('functiona firstUniqueChar', function () {
+
   it('finds a unique character at start, one unique char', function () {
     expect(firstUniqueChar('zabcdabcd')).toBe('z');
   });
@@ -18,6 +19,10 @@ describe('functiona firstUniqueChar', function () {
 
   it('finds a unique character at start, 3 unique char', function () {
     expect(firstUniqueChar('321abcdabcd')).toBe('3');
+  });
+
+  it("finds a unique in a string of numbers and letters", function () {
+  	expect(firstUniqueChar('3c2cb21a1a')).toBe('3');
   });
 
   it('finds a unique character at middle, 3 unique char', function () {
