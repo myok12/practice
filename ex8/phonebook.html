@@ -2,14 +2,17 @@
 <html>
 <head>
   <link rel="stylesheet" href="style.css">
-  <script src="ajax.js"></script>
-  <script src="updatePhoneBook.js"></script>
+  <script data-main="config" src="lib/require.js"></script>
   <script type="application/javascript">
-    //var ajax_get = require('./ajax.js');
-    //var insertJson = require('./updatePhoneBook.js');
     window.onload = function() {
-        ajax_get('data.json', function(data) { insertJson(data);});
-      }
+      require(['config'], function() {
+        require(['ajax','update'], function() {
+          ajax_get('json/data.json', function(data) {
+            insertJson(data);
+          });
+        });
+      });
+    }
   </script>
 </head>
 <body>
