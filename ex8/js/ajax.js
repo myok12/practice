@@ -16,4 +16,3 @@ function ajax_get(url, callback) {
   xmlhttp.open("GET", url, true);
   xmlhttp.send();
 }
-//module.exports = ajax_get;

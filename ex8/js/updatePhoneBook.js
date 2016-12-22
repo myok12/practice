@@ -48,4 +48,3 @@ function createLink(link, info) {
   element.innerHTML = info;
   return element;
 }
-//module.exports = insertJson;
