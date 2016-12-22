@@ -1,29 +1,63 @@
+<!DOCTYPE html>
 <html>
-	<head></head>
-	<body>
-		<ol id="phonebook">
-			<li>
-				<span>
-					ohad kravchick
-				</span>
-				<span>
-					347-346-2425  
-				</span>
-				<span>
-					myok12@yahoo.com
-				</span>
-			</li>
-			<li>
-				<span>
-					zuriel yahav
-				</span>
-				<span>
-					050-9001564
-				</span>
-				<span>
-					zyahav@gmail.com
-				</span>
-			</li>
-		</ol>
-	</body>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <script src="ajax.js"></script>
+  <script src="updatePhoneBook.js"></script>
+  <script type="application/javascript">
+    //var ajax_get = require('./ajax.js');
+    //var insertJson = require('./updatePhoneBook.js');
+    window.onload = function() {
+        ajax_get('data.json', function(data) { insertJson(data);});
+      }
+  </script>
+</head>
+<body>
+  <ol id="phonebook">
+    <li>
+      <span class="name">
+        *ohad kravchick
+      </span>
+      <span class="phone">
+        <a href="tel:347-346-2425">347-346-2425</a>
+      </span>
+      <span class="email">
+        <a href="emailto:myok12@yahoo.com">myok12@yahoo.com</a>
+      </span>
+    </li>
+    <li>
+      <span class="name">
+        *ohad kravchick
+      </span>
+      <span class="phone">
+        <a href="tel:347-346-2425">347-346-2425</a>
+      </span>
+      <span class="email">
+        <a href="emailto:myok12@yahoo.com">myok12@yahoo.com</a>
+      </span>
+    </li>
+    <li>
+      <span class="name">
+        *ohad kravchick
+      </span>
+      <span class="phone">
+        <a href="tel:347-346-2425">347-346-2425</a>
+      </span>
+      <span class="email">
+        <a href="emailto:myok12@yahoo.com">myok12@yahoo.com</a>
+      </span>
+    </li>
+    <li>
+      <span class="name">
+        *zuriel yahav
+      </span>
+      <span class="phone">
+        <a href="tel:0050-900156">0450-9001564</a>
+      </span>
+      <span class="email">
+        <a href="zyahav@gmail.com">zyahav@gmail.com</a>
+      </span>
+    </li>
+  </ol>
+</body>
 </html>
