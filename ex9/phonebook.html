@@ -7,15 +7,24 @@
   <script data-main="js/main" src="js/lib/require.js"></script>
 </head>
 <body>
-  <input type="button" id="btnReloadList" value="Reload" />
-  <input type="button" id="btnASC" value="ASC" />
-  <input type="button" id="btnDESC" value="DESC" hidden />
+  <div class="reloadList">
+    <input type="button" id="btnReloadList" value="Reload" />
+  </div>
 
-  <input type="button" id="btnSearchOn" value="Search" />
-  <input type="text" id="textSearch" value="" hidden />
-  <input type="button" id="btnFilter" value="Filter" hidden />
-  <input type="button" id="btnSearchOff" value="Exit" hidden/>
-
+  <div class="orderList">
+    <input type="button" id="btnASC" value="ASC" />
+    <input type="button" id="btnDESC" value="DESC" />
+  </div>
+  <div class="search">
+    <div class="searchMin">
+      <input type="button" id="btnMax" value="Search" />
+    </div>
+    <div class="searchMax">
+      <input type="text" id="filter" value="" />
+      <input type="button" id="btnFilter" value="Filter" />
+      <input type="button" id="btnMin" value="Exit" />
+    </div>
+  </div>
   <script id="phoneBookTemplate" type="text/template">
     <!-- It loops an array -->
     <li>
