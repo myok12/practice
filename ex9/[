@@ -1,0 +1,30 @@
+[
+  {
+    "name": "1 - Ohad K",
+    "comm": {
+      "mail": "ohadK@gmail.com",
+      "phone": "100-900-1564"
+    }
+  },
+  {
+    "name": "2 - Zuriel Yahav",
+    "comm": {
+      "mail": "zyahav@gmail.com",
+      "phone": "050-9001564"
+    }
+  },
+  {
+    "name": "3 - Ohad K",
+    "comm": {
+      "mail": "ohadK@gmail.com",
+      "phone": "200-1001564"
+    }
+  },
+  {
+    "name": "4 - Zuriel Yahav",
+    "comm": {
+      "mail": "zyahav@gmail.com",
+      "phone": "050-9001564"
+    }
+  }
+]

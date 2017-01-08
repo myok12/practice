@@ -1,0 +1,26 @@
+/*
+ * http://www.codeography.com/2010/08/02/how-to-make-vim-a-first-class-css-editor.html
+*/
+
+.name {
+
+  font-size: 34px;
+  display:block;
+}
+/*li {
+
+  background-color: red;
+}
+*/
+#phoneBook li:nth-child(2n){
+
+  background-color: gray;
+}
+
+.searchMax {
+  display: none;
+}
+
+#btnDESC {
+  display: none;
+}
