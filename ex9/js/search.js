@@ -1,4 +1,4 @@
-define(['ajaxGet'], function(ajaxGet) {
+define(function() {
 
   return function(fun) {
     $('#btnMax').click(function() {
