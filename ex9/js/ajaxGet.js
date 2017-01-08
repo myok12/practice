@@ -11,13 +11,10 @@ define(function() {
         },
         error: function(fff){
             alert( "it is an error" + fff );
-            console.log(fff);
         },
         success: function(data) {
-          console.log('ajax', data);
           callback(data);
         }
       })
-      console.log('ajaxAAS');
     }
 });

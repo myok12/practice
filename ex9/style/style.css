@@ -1,17 +1,42 @@
 /*
  * http://www.codeography.com/2010/08/02/how-to-make-vim-a-first-class-css-editor.html
 */
+body{
+  font-family: 'Roboto', sans-serif;
+  font-size: 100%; font-size: 14px;
+}
+
+
+.center {
+  margin: auto;
+  width: 40%;
+  border: 3px solid green;
+  padding: 0px;
+}
+
 
 .name {
 
   font-size: 34px;
   display:block;
 }
-/*li {
 
-  background-color: red;
+ol {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
 }
-*/
+
+li {
+  margin: 0px;
+  padding: 0px;
+  transition: all 1.4s ease-out;
+  opacity: 1;
+}
+
+div {
+margin: 0px;
+}
 #phoneBook li:nth-child(2n){
 
   background-color: gray;

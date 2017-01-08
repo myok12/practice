@@ -1,15 +1,18 @@
-define(function() {
-  return function() {
-    setEvents();
-  }
+define(['ajaxGet'], function(ajaxGet) {
 
-  function setEvents() {
+  return function(fun) {
     $('#btnMax').click(function() {
-      showSearch();
+      console.log('searchOn');
+      $( '#btnFilter' ).prop( "disabled", true );
+      $('#filter').val('Type your filter');
+      $('.searchMin').hide();
+      $('.searchMax').show();
     });
 
     $('#btnMin').click(function() {
-      hideSearch();
+      console.log('searchOff');
+      $('.searchMin').show();
+      $('.searchMax').hide();
     });
 
     $( '#filter' ).focus(function() {
@@ -18,52 +21,27 @@ define(function() {
       }
     });
 
-    $('#filter').change(function() {
-      onFilterChange();
+    $('#filter').on('keydown', function(val) {
+      if (val.which == 13) filterList(fun);
     });
 
     $('#filter').on('input', function() {
-      onFilterInput();
+      console.log('searchInput');
+      if($('#filter').val() === '') {
+        $( '#btnFilter' ).prop( "disabled", true );
+      } else {
+        $( '#btnFilter' ).prop( "disabled", false );
+      }
     });
 
     $('#btnFilter').click(function() {
-      filterList();
+      filterList(fun);
     });
   }
 
-  function onFilterInput() {
-    console.log('searchInput');
-    if($('#filter').val() === '') {
-      $( '#btnFilter' ).prop( "disabled", true );
-    } else {
-      $( '#btnFilter' ).prop( "disabled", false );
-    }
-  }
-
-  function onFilterChange() {
-    console.log('searchChange');
-    if($('#filter').val() === '') {
-      $( '#btnFilter' ).prop( "disabled", true );
-    } else {
-      $( "#btnFilter" ).prop( "disabled", false );
-    }
-  }
-
-  function filterList() {
+  function filterList(fun) {
     console.log('filter list click');
+    fun.filter()
   }
 
-  function showSearch() {
-    console.log('searchOn');
-    $( '#btnFilter' ).prop( "disabled", true );
-    $('#filter').val('Type your filter');
-    $('.searchMin').hide();
-    $('.searchMax').show();
-  }
-
-  function hideSearch() {
-    console.log('searchOff');
-    $('.searchMin').show();
-    $('.searchMax').hide();
-  }
 });

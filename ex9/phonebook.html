@@ -1,88 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="style/style.css">
+  <script src="js/lib/underscore.js"></script>
   <script src="js/lib/jquery-3.1.1.js"></script>
   <script src="js/lib/jquery.tmpl.js"></script>
   <script data-main="js/main" src="js/lib/require.js"></script>
 </head>
 <body>
-  <div class="reloadList">
-    <input type="button" id="btnReloadList" value="Reload" />
-  </div>
-
-  <div class="orderList">
-    <input type="button" id="btnASC" value="ASC" />
-    <input type="button" id="btnDESC" value="DESC" />
-  </div>
-  <div class="search">
-    <div class="searchMin">
-      <input type="button" id="btnMax" value="Search" />
+  <div class="center">
+    <div class="reloadList">
+      <input type="button" id="btnReloadList" value="Reload" />
     </div>
-    <div class="searchMax">
-      <input type="text" id="filter" value="" />
-      <input type="button" id="btnFilter" value="Filter" />
-      <input type="button" id="btnMin" value="Exit" />
-    </div>
-  </div>
-  <script id="phoneBookTemplate" type="text/template">
-    <!-- It loops an array -->
-    <li>
-      <span class="name">${name}</span>
-      <span class="phone">
-        <a href="tel:${comm.phone}">${comm.phone}</a>
-      </span>
-      <span class="email">
-        <a href="emailto:${comm.mail}">${comm.mail}</a>
-      </span>
-    </li>
-  </script>
 
-  <ol id="phoneBook">
-    <li>
-      <span class="name fname">
-        *ohad kravchick
-      </span>
-      <span class="name">
-        <a href="tel:347-346-2425">347-346-2425</a>
-      </span>
-      <span class="email">
-        <a href="emailto:myok12@yahoo.com">myok12@yahoo.com</a>
-      </span>
-    </li>
-    <li>
-      <span class="name">
-        *ohad kravchick
-      </span>
-      <span class="phone">
-        <a href="tel:347-346-2425">347-346-2425</a>
-      </span>
-      <span class="email">
-        <a href="emailto:myok12@yahoo.com">myok12@yahoo.com</a>
-      </span>
-    </li>
-    <li>
-      <span class="name">
-        *ohad kravchick
-      </span>
-      <span class="phone">
-        <a href="tel:347-346-2425">347-346-2425</a>
-      </span>
-      <span class="email">
-        <a href="emailto:myok12@yahoo.com">myok12@yahoo.com</a>
-      </span>
-    </li>
-    <li>
-      <span class="name">
-        *zuriel yahav
-      </span>
-      <span class="phone">
-        <a href="tel:0050-900156">0450-9001564</a>
-      </span>
-      <span class="email">
-        <a href="zyahav@gmail.com">zyahav@gmail.com</a>
-      </span>
-    </li>
-  </ol>
+    <div class="orderList">
+      <input type="button" id="btnASC" value="ASC" />
+      <input type="button" id="btnDESC" value="DESC" />
+    </div>
+
+    <div class="search">
+      <div class="searchMin">
+        <input type="button" id="btnMax" value="Search" />
+      </div>
+      <div class="searchMax">
+        <input type="text" id="filter" value="" />
+        <input type="button" id="btnFilter" value="Filter" />
+        <input type="button" id="btnMin" value="Exit" />
+      </div>
+    </div>
+    <script id="phoneBookTemplate" type="text/template">
+      <!-- It loops an array -->
+      <li>
+        <span class="name">${name}</span>
+        <span class="phone">
+          <a href="tel:${comm.phone}">${comm.phone}</a>
+        </span>
+        <span class="email">
+          <a href="emailto:${comm.mail}">${comm.mail}</a>
+        </span>
+      </li>
+    </script>
+
+    <ol id="phoneBook">
+      <li>
+        <span class="name fname">
+          *ohad kravchick
+        </span>
+        <span class="name">
+          <a href="tel:347-346-2425">347-346-2425</a>
+        </span>
+        <span class="email">
+          <a href="emailto:myok12@yahoo.com">myok12@yahoo.com</a>
+        </span>
+      </li>
+      <li>
+        <span class="name">
+          *ohad kravchick
+        </span>
+        <span class="phone">
+          <a href="tel:347-346-2425">347-346-2425</a>
+        </span>
+        <span class="email">
+          <a href="emailto:myok12@yahoo.com">myok12@yahoo.com</a>
+        </span>
+      </li>
+      <li>
+        <span class="name">
+          *ohad kravchick
+        </span>
+        <span class="phone">
+          <a href="tel:347-346-2425">347-346-2425</a>
+        </span>
+        <span class="email">
+          <a href="emailto:myok12@yahoo.com">myok12@yahoo.com</a>
+        </span>
+      </li>
+      <li>
+        <span class="name">
+          *zuriel yahav
+        </span>
+        <span class="phone">
+          <a href="tel:0050-900156">0450-9001564</a>
+        </span>
+        <span class="email">
+          <a href="zyahav@gmail.com">zyahav@gmail.com</a>
+        </span>
+      </li>
+    </ol>
+
+  </div>
 </body>
 </html>
