@@ -10,35 +10,52 @@
 </head>
 <body>
   <div class="center">
-    <div class="reloadList">
-      <input type="button" id="btnReloadList" value="Reload" />
+    <div>
+        <h1>CONTACTS</h1>
     </div>
+    <div class=main-buttons">
+      <div class="loadorder-buttuns-layout">
+        <div class="reloadList">
+          <input type="button" id="btnReloadList" value="Load" />
+        </div>
 
-    <div class="orderList">
-      <input type="button" id="btnASC" value="ASC" />
-      <input type="button" id="btnDESC" value="DESC" />
-    </div>
-
-    <div class="search">
-      <div class="searchMin">
-        <input type="button" id="btnMax" value="Search" />
+        <div class="orderList" >
+          <input type="button" id="btnASC" value="ASC" disabled />
+          <input type="button" id="btnDESC" value="DESC" disabled />
+        </div>
       </div>
-      <div class="searchMax">
-        <input type="text" id="filter" value="" />
-        <input type="button" id="btnFilter" value="Filter" />
-        <input type="button" id="btnMin" value="Exit" />
+      <div class="search">
+        <div class="searchMin">
+          <input type="button" id="btnMax" value="Search" disabled />
+        </div>
+        <div class="searchMax">
+          <input type="text" placeholder='Search...' id="filter" value="" />
+          <input type="button" id="btnFilter" value="Filter" />
+          <input type="button" id="btnMin" value="Exit" />
+        </div>
+
       </div>
     </div>
     <script id="phoneBookTemplate" type="text/template">
       <!-- It loops an array -->
       <li>
-        <span class="name">${name}</span>
-        <span class="phone">
-          <a href="tel:${comm.phone}">${comm.phone}</a>
-        </span>
-        <span class="email">
-          <a href="emailto:${comm.mail}">${comm.mail}</a>
-        </span>
+        <div>
+          <h1 class="name">${name}</h1>
+        </div>
+        <div class="info">
+          <div class="phone">
+            <span>Phone</span>
+            <span>
+              <a href="tel:${comm.phone}">${comm.phone}</a>
+            </span>
+          </div>
+          <div class="email">
+            <span>Email</span>
+            <span>
+              <a href="emailto:${comm.mail}">${comm.mail}</a>
+            </span>
+          </div>
+        </div>
       </li>
     </script>
 

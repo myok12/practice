@@ -4,7 +4,6 @@ define(function() {
       $.ajax({
         type: 'GET',
         url: url,
-        },
         error: function(fff){
             alert( "it is an error" + fff );
         },

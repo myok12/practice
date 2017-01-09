@@ -9,29 +9,54 @@ body{
 #filter {
 }
 
+.main-buttons{
+
+}
+
+.loadorder-buttuns-layout {
+  display: flex;
+}
+
+#btnReloadList {
+  flex: 1;
+}
+
+#btnASC {
+
+  flex: 1;
+}
+
+#btnDESC {
+
+}
+
+#btnMax{
+
+}
+
 h1 {
   color: gray;
   text-align: center;
 }
+
 .center {
   margin: auto;
   width: 40%;
   border: 3px solid green;
   padding: 0px;
 }
+
 .info {
   margin: auto;
   width: 90%;
   padding: 0px;
-
 }
 
 .name {
-
   font-size: 34px;
   display:block;
   color: gray;
-text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 ol {
@@ -48,7 +73,7 @@ li {
 }
 
 div {
-margin: 0px;
+  margin: 0px;
 }
 
 .orderList{
@@ -56,10 +81,6 @@ margin: 0px;
 
 .searchMax {
   display: none;
-}
-
-#btnASC {
-  border-radius: 8px;
 }
 
 #btnReloadList, #btnASC, #btnDESC, #btnMax{
@@ -78,6 +99,4 @@ margin: 0px;
 
 #btnDESC {
   display: none;
-  border-radius: 8px;
 }
-
