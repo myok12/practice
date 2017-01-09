@@ -4,10 +4,6 @@ define(function() {
       $.ajax({
         type: 'GET',
         url: url,
-        statusCode: {
-          404: function() {
-            alert( "page not found" );
-          }
         },
         error: function(fff){
             alert( "it is an error" + fff );
