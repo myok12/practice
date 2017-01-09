@@ -5,23 +5,23 @@ requirejs(['ajaxGet','load','search', 'order'] , function(ajaxGet, load, search,
       load: function(){
          ajaxGet('json/data.json', function(phoneBookData) {
            fun.data =  phoneBookData;
-          fun.print( fun.data );
+          fun.render( fun.data );
         });
       },
       sortByAsc: function() {
-          fun.print( _.sortBy(fun.data, 'name') );
+          fun.render( _.sortBy(fun.data, 'name') );
       },
       sortByDesc: function() {
-        fun.print( _.sortBy(fun.data, 'name').reverse());
+        fun.render( _.sortBy(fun.data, 'name').reverse());
       },
       filter: function() {
           var filterList = _.filter(fun.data, function(name) {
             if (name.name.indexOf($( '#filter' ).val()) > -1) return true;
           }
         );
-        fun.print( _.sortBy(filterList, 'name').reverse());
+        fun.render( _.sortBy(filterList, 'name').reverse());
       },
-      print: function(objList) {
+      render: function(objList) {
         $('li').remove();
         $("#phoneBookTemplate").tmpl( objList )
         .appendTo( "#phoneBook" );
