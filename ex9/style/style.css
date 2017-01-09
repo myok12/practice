@@ -6,19 +6,32 @@ body{
   font-size: 100%; font-size: 14px;
 }
 
+#filter {
+}
 
+h1 {
+  color: gray;
+  text-align: center;
+}
 .center {
   margin: auto;
   width: 40%;
   border: 3px solid green;
   padding: 0px;
 }
+.info {
+  margin: auto;
+  width: 90%;
+  padding: 0px;
 
+}
 
 .name {
 
   font-size: 34px;
   display:block;
+  color: gray;
+text-transform: uppercase;
 }
 
 ol {
@@ -37,15 +50,19 @@ li {
 div {
 margin: 0px;
 }
-#phoneBook li:nth-child(2n){
 
-  background-color: gray;
+.orderList{
 }
 
 .searchMax {
   display: none;
 }
 
+#btnASC {
+  border-radius: 8px;
+}
+
 #btnDESC {
   display: none;
+  border-radius: 8px;
 }
