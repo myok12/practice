@@ -16,7 +16,7 @@ requirejs(['ajaxGet','load','search', 'order'] , function(ajaxGet, load, search,
       },
       filter: function() {
           var filterList = _.filter(fun.data, function(name) {
-            if (name.name.indexOf($( '#filter' ).val()) > -1) return name;
+            if (name.name.indexOf($( '#filter' ).val()) > -1) return true;
           }
         );
         fun.print( _.sortBy(filterList, 'name').reverse());
