@@ -3,12 +3,43 @@
 <head>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="style/style.css">
+  <script src="js/lib/howler.js"></script>
   <script src="js/lib/underscore.js"></script>
   <script src="js/lib/jquery-3.1.1.js"></script>
   <script src="js/lib/jquery.tmpl.js"></script>
   <script data-main="js/main" src="js/lib/require.js"></script>
+<style>
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
 </head>
 <body>
+    <div id="loader"></div>
   <div class="center">
     <div>
         <h1>CONTACTS</h1>
@@ -35,6 +66,7 @@
         </div>
 
       </div>
+
     </div>
     <script id="phoneBookTemplate" type="text/template">
       <!-- It loops an array -->
@@ -42,17 +74,29 @@
         <div>
           <h1 class="name">${name}</h1>
         </div>
+        <div class="letter-noun-layout">
+          <div class="letterImageDiv">
+            <img src="assets/img/letters/${name}.png" class="letterImage" alt="${number}"/>
+          </div>
+          <div class="nounImageDiv">
+            <img src="assets/img/noun/noun-${name}-kamatz.png" class="nounImage" alt="${number}"/>
+          </div>
+          <div class="shapeImageDiv">
+            <img src="assets/img/shape/${number}-letter.png" class="shapeImage" />
+          </div>
+
+        </div>
         <div class="info">
           <div class="phone">
-            <span>Phone</span>
+            <span class="note">Sound</span>
             <span>
-              <a href="tel:${comm.phone}">${comm.phone}</a>
+              <a href="tel:${sound}">${sound}</a>
             </span>
           </div>
-          <div class="email">
-            <span>Email</span>
+          <div class="letterSound">
+            <span class="note">Number</span>
             <span>
-              <a href="emailto:${comm.mail}">${comm.mail}</a>
+              <a href="emailto:${number}">${number}</a>
             </span>
           </div>
         </div>
@@ -60,50 +104,6 @@
     </script>
 
     <ol id="phoneBook">
-      <li>
-        <span class="name fname">
-          *ohad kravchick
-        </span>
-        <span class="name">
-          <a href="tel:347-346-2425">347-346-2425</a>
-        </span>
-        <span class="email">
-          <a href="emailto:myok12@yahoo.com">myok12@yahoo.com</a>
-        </span>
-      </li>
-      <li>
-        <span class="name">
-          *ohad kravchick
-        </span>
-        <span class="phone">
-          <a href="tel:347-346-2425">347-346-2425</a>
-        </span>
-        <span class="email">
-          <a href="emailto:myok12@yahoo.com">myok12@yahoo.com</a>
-        </span>
-      </li>
-      <li>
-        <span class="name">
-          *ohad kravchick
-        </span>
-        <span class="phone">
-          <a href="tel:347-346-2425">347-346-2425</a>
-        </span>
-        <span class="email">
-          <a href="emailto:myok12@yahoo.com">myok12@yahoo.com</a>
-        </span>
-      </li>
-      <li>
-        <span class="name">
-          *zuriel yahav
-        </span>
-        <span class="phone">
-          <a href="tel:0050-900156">0450-9001564</a>
-        </span>
-        <span class="email">
-          <a href="zyahav@gmail.com">zyahav@gmail.com</a>
-        </span>
-      </li>
     </ol>
 
   </div>

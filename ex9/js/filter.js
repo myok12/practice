@@ -1,17 +1,14 @@
 define(function() {
-  return function(filter) {
-    $('#btnMax').click(function() {
-      console.log('searchOn');
-      $( '#btnFilter' ).prop( "disabled", true );
-      //$('#filter').val('Type your filter');
-      $('.searchMin').hide();
-      $('.searchMax').show();
+  return function(callbalck) {
+    $( '#btnMax' ).click(function() {
+      //$( '#btnFilter' ).prop( 'disabled', true );
+      $( '.searchMin' ).hide();
+      $( '.searchMax' ).show();
     });
 
-    $('#btnMin').click(function() {
-      console.log('searchOff');
-      $('.searchMin').show();
-      $('.searchMax').hide();
+    $( '#btnMin' ).click(function() {
+      $( '.searchMin' ).show();
+      $( '.searchMax' ).hide();
     });
 
     $( '#filter' ).focus(function() {
@@ -20,21 +17,20 @@ define(function() {
       //}
     });
 
-    $('#filter').on('keydown', function(val) {
-      if (val.which == 13) filter();
+    $( '#filter' ).on( 'keydown' , function(val) {
+      if (val.which == 13) callbalck($( '#filter' ).val());
     });
 
-    $('#filter').on('input', function() {
-      console.log('searchInput');
-      if($('#filter').val() === '') {
-        $( '#btnFilter' ).prop( "disabled", true );
+    $( '#filter' ).on( 'input' , function() {
+      if($( '#filter' ).val() === '') {
+        $( '#btnFilter' ).prop( 'disabled' , true );
       } else {
-        $( '#btnFilter' ).prop( "disabled", false );
+        $( '#btnFilter' ).prop( 'disabled' , false );
       }
     });
 
-    $('#btnFilter').click(function() {
-      filter();
+    $( '#btnFilter' ).click(function() {
+      callbalck($( '#filter' ).val());
     });
   }
 });

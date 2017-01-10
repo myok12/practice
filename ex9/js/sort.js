@@ -1,17 +1,17 @@
 define(function() {
-  return function(asc,desc) {
+  return function(sortList) {
     $('#btnASC').click(function() {
       console.log('asc');
       $('#btnASC').hide();
       $('#btnDESC').show();
-      asc();
+      sortList({asc: true});
     });
 
     $('#btnDESC').click(function() {
       console.log('desc');
       $('#btnASC').show();
       $('#btnDESC').hide();
-      desc();
+      sortList({asc: false});
     });
   };
 });
