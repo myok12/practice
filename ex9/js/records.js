@@ -16,16 +16,5 @@ define(function() {
         type: 'nounImage'
       });
     });
-
-    var updateRecords = function(objRecord) {
-      $('li').remove();
-      $( "#phoneBook" ).hide();
-      $("#phoneBookTemplate").tmpl( objRecord )
-        .appendTo( "#phoneBook" );
-      $('#phoneBook').slideDown( 3000, function() {
-          document.getElementById("loader").style.display = "none";
-        });
-    }
-    updateRecords();
   };
 });

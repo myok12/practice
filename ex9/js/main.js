@@ -3,9 +3,22 @@ requirejs(['ajaxGet','load','filter', 'sort','records'] , function(ajaxGet, load
     var phoneBookData = [];
 
     var render = function(objList) {
+
+      console.log('updateRecordsAAA');
+    var updateRecords = function(objRecord) {
+      console.log('updateRecords');
+      $('li').remove();
+      $( "#phoneBook" ).hide();
+      $("#phoneBookTemplate").tmpl( objRecord )
+        .appendTo( "#phoneBook" );
+      $('#phoneBook').slideDown( 3000, function() {
+          document.getElementById("loader").style.display = "none";
+        });
+    }
+    updateRecords(objList);
+
       records(function(myThis) {
 
-        updateRecords(objList);
         var file = {};
         if (myThis.type === 'letterImage') {
           file = {src: ['assets/sound/letter/'+myThis.number+'-letter.mp3']};
