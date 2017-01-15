@@ -1,0 +1,27 @@
+div {
+  margin: 10px;
+}
+
+.input {
+  width: 250px;
+  border: 0 solid black;
+  border-width: 2px;  
+}
+
+.hide {
+  display: none;
+}
+
+ol {
+  width: 250px; 
+  border: 0 solid black;
+  border-width: 2px;
+}
+
+li {
+  border-bottom: 1px dashed black;
+}
+
+.last {
+ border-bottom: none; 
+}
