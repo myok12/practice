@@ -1,19 +1,14 @@
-
 var search = {
-  toggleSuggestions: {
-    _.debounce(function() {
+  toggleSuggestions: _.debounce(function() {
       if ($( '.input' ).val() === '') {
         // User deleted all input so we hide suggestions
-        render.hideSuggestions();
+        search.hideSuggestions();
       } else {
-
-    console.log('typingwwww');
         // User need same suggestions so lets get same and show it
         var query = $( '.input' ).val();
-        getSuggestions(query , showSuggestions);
+        search.getSuggestions(query , search.showSuggestions);
       }
-    }, 500);
-  },
+    }, 500),
   showSuggestions: function(data) {
     // Call me with no data to hide suggestion box
     // otherwise i will render "data", (show suggestions)
@@ -24,7 +19,7 @@ var search = {
       }
       $( 'ol' ).removeClass( "hide" );
     } else {
-      hideSuggestions();
+      search.hideSuggestions();
     }
   },
   hideSuggestions: function() {
@@ -44,7 +39,6 @@ var search = {
 
 $(function() {
   $( '.input' ).on('input', function() { 
-    console.log('typing');
     search.toggleSuggestions();
   });
 });
