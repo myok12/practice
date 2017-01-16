@@ -5,17 +5,21 @@ div {
 .input {
   width: 250px;
   border: 0 solid black;
-  border-width: 2px;  
+  border-width: 1px;
 }
 
 .hide {
   display: none;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 ol {
   width: 250px; 
-  border: 0 solid black;
-  border-width: 2px;
+  border: 1px solid black;
+  border-width: 1px;
 }
 
 li {
