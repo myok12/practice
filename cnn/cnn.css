@@ -6,7 +6,7 @@
     border-radius: 5px;
 }
 
-.ArticleIMG {
+.article-img {
     width: 85px;
     height: 85px;
     background-size: 85px;
@@ -20,7 +20,7 @@
     float: left;
 }
 
-.Icon {
+.icon {
     width: 20px;
     height: 20px;
     background-image: url('https://www.shareicon.net/data/128x128/2016/06/21/611593_article_128x128.png');
@@ -28,12 +28,12 @@
     float: left;
 }
 
-.Source {
+.source {
     padding-left: 10px;
     float: left;
 }
 
-.HoursAgo {
+.hours-ago {
     float: left;
     padding-left: 10px;
 }
@@ -43,7 +43,7 @@ p {
     color: #999999;
 }
 
-.Menu {
+.menu {
     width: 20px;
     height: 20px;
     background-image: url('https://d30y9cdsu7xlg0.cloudfront.net/png/61783-200.png');
@@ -51,7 +51,7 @@ p {
     float: right;
 }
 
-.ToolBar {
+.tool-bar {
     margin-bottom: 20px;
     color: #999999;
     font-size: 20;
