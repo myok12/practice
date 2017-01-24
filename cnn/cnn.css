@@ -1,0 +1,62 @@
+.containr {
+    width: 585px;
+    padding: 20px;
+    border: 1px solid gray;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.ArticleIMG {
+    width: 85px;
+    height: 85px;
+    background-size: 85px;
+    background-repeat: no-repeat;
+    background-image: url('http://www.cs.cmu.edu/~rsinha/Courses/45-934/ant2.jpg');
+    float: right;
+}
+
+.article {
+    width: 500px;
+    float: left;
+}
+
+.Icon {
+    width: 20px;
+    height: 20px;
+    background-image: url('https://www.shareicon.net/data/128x128/2016/06/21/611593_article_128x128.png');
+    background-size: 20px;
+    float: left;
+}
+
+.Source {
+    padding-left: 10px;
+    float: left;
+}
+
+.HoursAgo {
+    float: left;
+    padding-left: 10px;
+}
+
+p {
+    line-height: 25px;
+    color: #999999;
+}
+
+.Menu {
+    width: 20px;
+    height: 20px;
+    background-image: url('https://d30y9cdsu7xlg0.cloudfront.net/png/61783-200.png');
+    background-size: 20px;
+    float: right;
+}
+
+.ToolBar {
+    margin-bottom: 20px;
+    color: #999999;
+    font-size: 20;
+}
+
+.clear {
+    clear: both;
+}
