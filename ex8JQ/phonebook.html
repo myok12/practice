@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style/style.css">
+  <script data-main="js/config" src="js/lib/require.js"></script>
+  <script type="application/javascript">
+    window.onload = function() {
+      require(['config'], function() {
+        require(['jquery'], function($) {
+          $(document).ready(function() {
+            require(['jquery','tmpl','ajaxGet'], function($, tmpl, ajaxGet) {
+              $('#button1').click(function() {
+                ajaxGet('json/data.json', function(phoneBookData) {
+                  $('li').remove();
+                  $("#phoneBookTemplate").tmpl( phoneBookData )
+                    .appendTo( "#phoneBook" );
+                });
+              });
+            });
+          });
+        });
+      });
+    }
+  </script>
+</head>
+<body>
+  <input type="button" id="button1" value="CM" />
+
+  <script id="phoneBookTemplate" type="text/template">
+    <li>
+      <span class="name">${name}</span>
+      <span class="phone">
+        <a href="tel:${phone}">${phone}</a>
+      </span>
+      <span class="email">
+        <a href="emailto:${email}">${email}</a>
+      </span>
+    </li>
+  </script>
+
+  <ol id="phoneBook">
+    <li>
+      <span class="name fname">
+        *ohad kravchick
+      </span>
+      <span class="name">
+        <a href="tel:347-346-2425">347-346-2425</a>
+      </span>
+      <span class="email">
+        <a href="emailto:myok12@yahoo.com">myok12@yahoo.com</a>
+      </span>
+    </li>
+    <li>
+      <span class="name">
+        *ohad kravchick
+      </span>
+      <span class="phone">
+        <a href="tel:347-346-2425">347-346-2425</a>
+      </span>
+      <span class="email">
+        <a href="emailto:myok12@yahoo.com">myok12@yahoo.com</a>
+      </span>
+    </li>
+    <li>
+      <span class="name">
+        *ohad kravchick
+      </span>
+      <span class="phone">
+        <a href="tel:347-346-2425">347-346-2425</a>
+      </span>
+      <span class="email">
+        <a href="emailto:myok12@yahoo.com">myok12@yahoo.com</a>
+      </span>
+    </li>
+    <li>
+      <span class="name">
+        *zuriel yahav
+      </span>
+      <span class="phone">
+        <a href="tel:0050-900156">0450-9001564</a>
+      </span>
+      <span class="email">
+        <a href="zyahav@gmail.com">zyahav@gmail.com</a>
+      </span>
+    </li>
+  </ol>
+</body>
+</html>
