@@ -1,0 +1,102 @@
+/*
+ * http://www.codeography.com/2010/08/02/how-to-make-vim-a-first-class-css-editor.html
+*/
+body{
+  font-family: 'Roboto', sans-serif;
+  font-size: 100%; font-size: 14px;
+}
+
+#filter {
+}
+
+.main-buttons{
+
+}
+
+.loadorder-buttuns-layout {
+  display: flex;
+}
+
+#btnReloadList {
+  flex: 1;
+}
+
+#btnASC {
+
+  flex: 1;
+}
+
+#btnDESC {
+
+}
+
+#btnMax{
+
+}
+
+h1 {
+  color: gray;
+  text-align: center;
+}
+
+.center {
+  margin: auto;
+  width: 40%;
+  border: 3px solid green;
+  padding: 0px;
+}
+
+.info {
+  margin: auto;
+  width: 90%;
+  padding: 0px;
+}
+
+.name {
+  font-size: 34px;
+  display:block;
+  color: gray;
+  text-transform: uppercase;
+}
+
+ol {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  margin: 0px;
+  padding: 0px;
+  transition: all 1.4s ease-out;
+  opacity: 1;
+}
+
+div {
+  margin: 0px;
+}
+
+.orderList{
+}
+
+.searchMax {
+  display: none;
+}
+
+#btnReloadList, #btnASC, #btnDESC, #btnMax{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+#btnDESC {
+  display: none;
+}
