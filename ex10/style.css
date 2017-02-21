@@ -1,0 +1,33 @@
+div {
+  margin: 10px;
+}
+
+.input {
+  width: 250px;
+  border: 0 solid black;
+  border-width: 1px;
+}
+
+.hide {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ol {
+  width: 250px; 
+  border: 1px solid black;
+  border-width: 1px;
+}
+
+li {
+  border-bottom: 1px dashed black;
+}
+
+li:nth-last-child(-n+1) {
+ border-bottom: none; 
+}
+
+
