@@ -6,3 +6,21 @@
  *     fn(",,,") === 2
  *     fn("hel,lowo,rld") === -1
  */
+
+function getThirdCommaIndex(str,searchFor) {
+        
+        var index = -1;
+
+	for (var i = 0; i < 3; i++) {
+
+		index = str.indexOf(searchFor, index + 1);
+
+		//  If we did not find a comma in str will stop searching
+		if (index == -1) { 
+			break;
+		}
+	}
+	return index;
+}
+
+module.exports = getThirdCommaIndex;
